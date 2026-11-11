@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Artistic Beat · Extras</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Concepto: una sola hoja de presupuesto pegada con cinta, como el arte de papel del programa: precio arriba y, debajo, todo lo que entra */
+:root {
+  --paper: #F6F7FB;
+  --sheet: #FFFFFF;
+  --ink: #14161B;
+  --muted: #5E667A;
+  --line: #DDE2EC;
+  --blue: #2B59C3;
+  --blue-soft: #E6EDFB;
+  --tape: rgba(190, 206, 240, .78);
+  --shadow: 0 1px 0 rgba(20,22,27,.04), 0 8px 24px rgba(30,45,90,.08);
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #101218; --sheet: #181B23; --ink: #EDEFF5; --muted: #A2A9BA; --line: #2A2F3B;
+  --blue: #7EA2F2; --blue-soft: #1E2944; --tape: rgba(120,145,200,.45);
+  --shadow: 0 1px 0 rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #101218; --sheet: #181B23; --ink: #EDEFF5; --muted: #A2A9BA; --line: #2A2F3B;
+  --blue: #7EA2F2; --blue-soft: #1E2944; --tape: rgba(120,145,200,.45);
+  --shadow: 0 1px 0 rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35); color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 400 16px/1.55 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 72px; }
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 28px; }
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -.01em; }
+h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); font-weight: 800; line-height: 1.05; }
+h2 { font-size: 1.25rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow { font: 700 .78rem/1 var(--body); text-transform: uppercase; letter-spacing: .09em; color: var(--blue); }
+
+/* Cabecera */
+.head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; }
+.head .titles { display: grid; gap: 12px; min-width: 0; }
+.head .lead { max-width: 60ch; color: var(--muted); }
+.total { position: relative; background: var(--sheet); border: 2px solid var(--ink); border-radius: 16px; padding: 22px 26px; min-width: 230px; box-shadow: var(--shadow); display: grid; gap: 10px; }
+.total::before, .tape::before { content: ""; position: absolute; width: 74px; height: 22px; background: var(--tape); top: -11px; left: 50%; transform: translateX(-50%) rotate(-4deg); border-radius: 2px; }
+.total .big { font: 800 3.2rem/1 var(--display); font-variant-numeric: tabular-nums; }
+
+/* Capturas */
+.shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+figure { margin: 0; display: grid; gap: 6px; min-width: 0; }
+figure img { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 10px; border: 1px solid var(--line); cursor: zoom-in; background: var(--paper); }
+figure video { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio: 30 / 19; border-radius: 10px; border: 1px solid var(--line); background: var(--paper); }
+figcaption { font-size: .82rem; color: var(--muted); }
+.tape { position: relative; }
+.tape::before { z-index: 1; left: 18%; transform: rotate(-6deg); }
+
+/* Qué incluye */
+.includes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.card { background: var(--sheet); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; box-shadow: var(--shadow); }
+.card.wide { grid-column: 1 / -1; }
+.card ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+.card li::marker { color: var(--blue); }
+.why { font-size: .92rem; color: var(--muted); border-left: 3px solid var(--line); padding-left: 12px; }
+
+/* Aparte */
+.apart { display: grid; gap: 14px; }
+.apart > h2 { font-size: 1.5rem; }
+.apart .note { color: var(--muted); max-width: 65ch; }
+.card.later { border: 1.5px dashed var(--line); box-shadow: none; }
+.card .top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.card .top h3 { font: 700 1.25rem/1.25 var(--display); letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+.card .cost { font: 800 1.6rem/1 var(--display); color: var(--blue); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.card .cost small { font-size: .6em; font-weight: 700; }
+.card.gift { background: var(--blue-soft); border-color: var(--blue); }
+.gift-title { font: 700 1.25rem/1.25 var(--display); letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+.gift-line { color: var(--muted); font-size: .85rem; max-width: 22ch; }
+
+/* Ampliar captura */
+dialog { border: 0; padding: 0; background: transparent; max-width: min(96vw, 1400px); }
+dialog::backdrop { background: rgba(10,12,20,.78); }
+dialog img { display: block; max-width: 100%; max-height: 88vh; border-radius: 12px; }
+dialog button { position: absolute; top: 8px; right: 8px; font: 700 .9rem var(--body); background: var(--sheet); color: var(--ink); border: 0; border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+button:focus-visible, img:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+@media (max-width: 820px) {
+  .head { grid-template-columns: 1fr; }
+  .shots { grid-template-columns: 1fr; }
+  .includes { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <div class="titles">
+      <p class="eyebrow">Artistic Beat · Presupuesto</p>
+      <h1>Modo juego (tipo Guitar Hero)</h1>
+      <p class="lead">Las notas bajan hasta una línea y cada niño las toca a tiempo. Convierte el vídeo de clase en un juego, con resultados al acabar.</p>
+    </div>
+    <div class="total">
+      <span class="eyebrow">Precio</span>
+      <div class="big">790 €</div>
+      <small class="gift-line">Con el modo clásico jugable de regalo</small>
+    </div>
+  </header>
+
+  <section class="shots" aria-label="Capturas del modo juego">
+    <figure class="tape"><video src="video/juego_carriles.mp4" poster="video/juego_carriles.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="Partida en la vista carriles: las notas bajan por carriles hacia la línea y se valoran los golpes"></video><figcaption>Vista carriles (aquí, con batería).</figcaption></figure>
+    <figure class="tape"><video src="video/juego_cuadricula.mp4" poster="video/juego_cuadricula.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="Partida en la vista cuadrícula con filas de chasquidos, palmas, pecho, muslos y pies"></video><figcaption>Vista cuadrícula (aquí, con percusión corporal).</figcaption></figure>
+    <figure><img src="img/resultados_cuerpo.jpg" alt="Tarjeta de resultados con dos estrellas, números y barras por gesto" loading="lazy"><figcaption>Resultados al acabar.</figcaption></figure>
+    <figure><img src="img/sin_resultados.jpg" alt="Final sin resultados: solo el mensaje de has terminado" loading="lazy"><figcaption>Con los resultados quitados.</figcaption></figure>
+  </section>
+
+  <section aria-labelledby="inc" style="display:grid;gap:14px">
+    <p class="eyebrow" id="inc">Qué incluye</p>
+    <div class="includes">
+      <article class="card">
+        <h2>El juego</h2>
+        <ul>
+          <li>Un carril por gesto o pieza, con su símbolo arriba y su figura musical en cada nota</li>
+          <li>Valoración de cada golpe: «¡Perfecto!», «¡Bien!» (pronto o tarde) o fallo</li>
+          <li>Racha y avisos al llegar a 10, 25 y 50 seguidos, con confeti</li>
+          <li>Se toca con el teclado (A–J), con clic o con el dedo en los botones</li>
+          <li>Cuenta atrás al empezar y pantalla grande para proyectar</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Vista cuadrícula</h2>
+        <ul>
+          <li>La partitura avanza de izquierda a derecha, como una partitura de batería real</li>
+          <li>Zona de perfecto y de bien marcada en la línea de golpe</li>
+          <li>Medidor de si se va pronto o tarde</li>
+          <li>La mascota salta con cada acierto y se tambalea con un fallo</li>
+          <li>Selector «Carriles / Cuadrícula»</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Percusión corporal</h2>
+        <ul>
+          <li>Pies, muslos, pecho, palmas y chasquidos, cada uno con su dibujo</li>
+          <li>Sonidos propios de cada gesto, para escuchar antes y como ayuda</li>
+          <li>Resultados por gesto, para saber cuál practicar</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Batería</h2>
+        <ul>
+          <li>Bombo, caja, charles, tom agudo, tom grave, crash y ride</li>
+          <li>Sonido de batería acústica grabada, sin instalar nada</li>
+          <li>Cada nota lleva la figura que le toca en su fila</li>
+          <li>Botones para oír cada pieza por separado</li>
+        </ul>
+        <p class="why">En la versión de la escuela, la batería se añade con una actualización.</p>
+      </article>
+
+      <article class="card">
+        <h2>Batería electrónica por MIDI</h2>
+        <ul>
+          <li>Se conecta por USB y se juega tocándola de verdad</li>
+          <li>El programa encuentra la batería sola al conectarla</li>
+          <li>Cada pad va a su pieza del juego</li>
+          <li>Muestra qué batería está conectada y la última nota tocada</li>
+        </ul>
+        <p class="why">Probado en Windows. En Mac está preparado, pero falta probarlo con una batería real.</p>
+      </article>
+
+      <article class="card">
+        <h2>Ayuda de fondo y metrónomo</h2>
+        <ul>
+          <li>El ritmo suena flojito de fondo y lo que toca el niño, por encima</li>
+          <li>Interruptor y volumen propio (tecla Y)</li>
+          <li>Metrónomo con acento en el primer tiempo (tecla M)</li>
+        </ul>
+      </article>
+
+      <article class="card wide">
+        <h2>Resultados y estrellas</h2>
+        <ul>
+          <li>De 0 a 3 estrellas según la precisión, también en directo mientras toca</li>
+          <li>Perfectos, bien, fallos y mejor racha</li>
+          <li>Si va adelantado o tarde, con un consejo</li>
+          <li>Barra por gesto o pieza y cuál conviene practicar</li>
+          <li>Interruptor para quitarlos: al acabar, solo «¡Has terminado!»</li>
+        </ul>
+      </article>
+
+      <article class="card wide gift">
+        <p class="eyebrow">De regalo al comprar el modo juego</p>
+        <h2>Modo clásico jugable</h2>
+        <ul>
+          <li>El huerto de siempre, pero se puede tocar a la vez que suena</li>
+          <li>Interruptor «Tocar con teclado o pantalla»</li>
+          <li>En Figuras y Hortalizas vale tocar en cualquier parte del dibujo o pulsar una tecla</li>
+          <li>En Percusión salen botones con su tecla debajo de la barra de reproducción</li>
+          <li>Valoración, racha, estrellas y resultados al acabar</li>
+          <li>Funciona en pantallas táctiles con un dedo</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="apart" aria-labelledby="aparte">
+    <p class="eyebrow">Aparte · no entra en los 790 €</p>
+    <h2 id="aparte">Web para los alumnos y clases conectadas</h2>
+    <p class="note">Precios orientativos; las dos juntas, 3.000 € más la cuota de clases conectadas. La app del profe (crear canciones y exportar vídeos) sigue como está.</p>
+    <div class="includes">
+      <article class="card later">
+        <div class="top"><h3>Jugar desde el navegador</h3><span class="cost">1.200 €</span></div>
+        <ul>
+          <li>El alumno juega desde una página web, sin instalar nada</li>
+          <li>El modo juego y los resultados, con el mismo dibujo hecho a mano</li>
+          <li>Funciona en ordenadores, Chromebooks y tablets (Android e iPad), con el dedo, el teclado o el ratón</li>
+          <li>El profe manda un enlace como deberes o reto semanal y el alumno lo abre en casa</li>
+          <li>Lee las mismas canciones que guarda la app: no hay que rehacer nada</li>
+          <li>Se actualiza sola: todos tienen siempre la última versión</li>
+          <li>Batería electrónica por MIDI en Chrome y Edge; en iPad no, porque Safari no lo permite</li>
+        </ul>
+      </article>
+
+      <article class="card later">
+        <div class="top"><h3>Clases conectadas</h3><span class="cost">1.800 € <small>+ 40 €/mes</small></span></div>
+        <ul>
+          <li>Entrada con código de clase (o cuentas, si la escuela lo prefiere)</li>
+          <li>El profe manda deberes: canción y puntuación que hay que sacar</li>
+          <li>Los resultados llegan solos, también desde la web: el profe ve su clase entera al momento</li>
+          <li>Progreso de cada alumno</li>
+          <li>Para motivar a los niños, podría haber rachas de días seguidos tocando y retos semanales con ranking de la clase</li>
+          <li>Servicio en la nube ya hecho, con plan gratuito para el tamaño de la escuela</li>
+        </ul>
+        <p class="why">La cuota mensual cubre el mantenimiento del servicio. Hay que cumplir el RGPD con datos de menores (permiso de las familias, dónde se guardan y cómo se borran); los textos legales los revisa la escuela.</p>
+      </article>
+
+      <article class="card wide gift">
+        <p class="eyebrow">De regalo al contratar «Jugar desde el navegador», «Clases conectadas» o la web de la escuela</p>
+        <h3 class="gift-title">Plugin VST para el DAW</h3>
+        <ul>
+          <li>El profe escribe el ritmo en su programa de música y llega a Artistic Beat sin pasar por un archivo MIDI suelto</li>
+          <li>Facilita la escritura de los ritmos</li>
+          <li>Permite ver cómo se va a ver tu MIDI en Artistic Beat</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="apart" aria-labelledby="webescuela">
+    <p class="eyebrow">Otro presupuesto · aparte de todo lo anterior</p>
+    <h2 id="webescuela">Página web de la escuela</h2>
+    <div class="includes">
+      <article class="card wide">
+        <div class="top"><h3>Web de la escuela</h3><span class="cost">900 €</span></div>
+        <ul>
+          <li>Investigación previa para ver cómo mostrar todo el potencial de la escuela: qué la hace especial, qué buscan las familias y cómo se presentan otras escuelas</li>
+          <li>Propuesta de estructura y contenidos a partir de esa investigación</li>
+          <li>Diseño a medida, con la identidad de la escuela</li>
+          <li>Se ve bien en móvil, tablet y ordenador</li>
+          <li>Fotos reales de la escuela: tengo dos contactos de fotógrafos para hacerlas</li>
+          <li>De regalo, el plugin VST para el DAW</li>
+        </ul>
+        <p class="why">Precio orientativo. No incluye el trabajo de los fotógrafos, el dominio ni el alojamiento.</p>
+      </article>
+    </div>
+  </section>
+</div>
+
+<dialog id="zoom" aria-label="Captura ampliada"><button type="button" id="zoomClose">Cerrar</button><img id="zoomImg" alt=""></dialog>
+
+<script>
+(function () {
+  var dlg = document.getElementById('zoom'), zi = document.getElementById('zoomImg');
+  document.querySelectorAll('figure img').forEach(function (img) {
+    img.tabIndex = 0;
+    var open = function () { zi.src = img.src; zi.alt = img.alt; if (dlg.showModal) dlg.showModal(); };
+    img.addEventListener('click', open);
+    img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  document.getElementById('zoomClose').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+})();
+</script>
+
+</body>
+</html>
